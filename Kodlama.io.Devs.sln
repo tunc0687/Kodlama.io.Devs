@@ -5,19 +5,21 @@ VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6386E12F-434D-436A-A0F4-2D93B7A2024A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kodlama.io.Devs", "Kodlama.io.Devs", "{3553A265-AB32-463F-8A2D-4431594D7938}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "corePackages", "corePackages", "{BFEBE64C-A559-47CE-AE29-15BC4E1A994A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kodlama.io.Devs.Application", "src\kodlama.io.Devs\Application\Kodlama.io.Devs.Application\Kodlama.io.Devs.Application.csproj", "{C395264B-A7B6-4DF4-A70A-ACD405A544F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Persistence", "src\corePackages\Core.Persistence\Core.Persistence.csproj", "{3352F3EB-795B-47C3-B2F5-19769208E6CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kodlama.io.Devs.Domain", "src\kodlama.io.Devs\Domain\Kodlama.io.Devs.Domain\Kodlama.io.Devs.Domain.csproj", "{716DDBB8-526A-47F9-80B6-628454D609FD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "kodlama.io.Devs", "kodlama.io.Devs", "{A642989A-9689-40BC-9DEF-68E343B4D4ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kodlama.io.Devs.Infrastructure", "src\kodlama.io.Devs\Infrastructure\Kodlama.io.Devs.Infrastructure\Kodlama.io.Devs.Infrastructure.csproj", "{6C23FFDD-F7D4-4A85-80C7-5CB51AA35D7D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kodlama.io.Devs.Application", "src\kodlama.io.Devs\Kodlama.io.Devs.Application\Kodlama.io.Devs.Application.csproj", "{799BD374-F4D6-466F-B223-0BFA97523C81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kodlama.io.Devs.Persistence", "src\kodlama.io.Devs\Persistence\Kodlama.io.Devs.Persistence\Kodlama.io.Devs.Persistence.csproj", "{9B1D3E90-E217-4E08-969D-1B61251E8D4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kodlama.io.Devs.Domain", "src\kodlama.io.Devs\Kodlama.io.Devs.Domain\Kodlama.io.Devs.Domain.csproj", "{18D79FE5-89E2-4B4A-8409-88FDE2AC505B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kodlama.io.Devs.WebAPI", "src\kodlama.io.Devs\WebAPI\Kodlama.io.Devs.WebAPI\Kodlama.io.Devs.WebAPI.csproj", "{E39FBA9B-97EB-45A2-9F49-96849C2ABBFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kodlama.io.Devs.Infrastructure", "src\kodlama.io.Devs\Kodlama.io.Devs.Infrastructure\Kodlama.io.Devs.Infrastructure.csproj", "{08D23710-D8A0-476F-9160-B73DA6D68AE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kodlama.io.Devs.Persistence", "src\kodlama.io.Devs\Kodlama.io.Devs.Persistence\Kodlama.io.Devs.Persistence.csproj", "{CAD770CD-CCB5-4050-8B1B-A741E779166A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kodlama.io.Devs.WebAPI", "src\kodlama.io.Devs\Kodlama.io.Devs.WebAPI\Kodlama.io.Devs.WebAPI.csproj", "{F493F614-7676-48AB-9BFC-DCC1FCFFB702}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,38 +27,43 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C395264B-A7B6-4DF4-A70A-ACD405A544F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C395264B-A7B6-4DF4-A70A-ACD405A544F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C395264B-A7B6-4DF4-A70A-ACD405A544F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C395264B-A7B6-4DF4-A70A-ACD405A544F2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{716DDBB8-526A-47F9-80B6-628454D609FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{716DDBB8-526A-47F9-80B6-628454D609FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{716DDBB8-526A-47F9-80B6-628454D609FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{716DDBB8-526A-47F9-80B6-628454D609FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C23FFDD-F7D4-4A85-80C7-5CB51AA35D7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C23FFDD-F7D4-4A85-80C7-5CB51AA35D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C23FFDD-F7D4-4A85-80C7-5CB51AA35D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C23FFDD-F7D4-4A85-80C7-5CB51AA35D7D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B1D3E90-E217-4E08-969D-1B61251E8D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B1D3E90-E217-4E08-969D-1B61251E8D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B1D3E90-E217-4E08-969D-1B61251E8D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B1D3E90-E217-4E08-969D-1B61251E8D4E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E39FBA9B-97EB-45A2-9F49-96849C2ABBFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E39FBA9B-97EB-45A2-9F49-96849C2ABBFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E39FBA9B-97EB-45A2-9F49-96849C2ABBFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E39FBA9B-97EB-45A2-9F49-96849C2ABBFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3352F3EB-795B-47C3-B2F5-19769208E6CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3352F3EB-795B-47C3-B2F5-19769208E6CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3352F3EB-795B-47C3-B2F5-19769208E6CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3352F3EB-795B-47C3-B2F5-19769208E6CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{799BD374-F4D6-466F-B223-0BFA97523C81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{799BD374-F4D6-466F-B223-0BFA97523C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{799BD374-F4D6-466F-B223-0BFA97523C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{799BD374-F4D6-466F-B223-0BFA97523C81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18D79FE5-89E2-4B4A-8409-88FDE2AC505B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D79FE5-89E2-4B4A-8409-88FDE2AC505B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D79FE5-89E2-4B4A-8409-88FDE2AC505B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18D79FE5-89E2-4B4A-8409-88FDE2AC505B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08D23710-D8A0-476F-9160-B73DA6D68AE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08D23710-D8A0-476F-9160-B73DA6D68AE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08D23710-D8A0-476F-9160-B73DA6D68AE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08D23710-D8A0-476F-9160-B73DA6D68AE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAD770CD-CCB5-4050-8B1B-A741E779166A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAD770CD-CCB5-4050-8B1B-A741E779166A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAD770CD-CCB5-4050-8B1B-A741E779166A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAD770CD-CCB5-4050-8B1B-A741E779166A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F493F614-7676-48AB-9BFC-DCC1FCFFB702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F493F614-7676-48AB-9BFC-DCC1FCFFB702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F493F614-7676-48AB-9BFC-DCC1FCFFB702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F493F614-7676-48AB-9BFC-DCC1FCFFB702}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{3553A265-AB32-463F-8A2D-4431594D7938} = {6386E12F-434D-436A-A0F4-2D93B7A2024A}
 		{BFEBE64C-A559-47CE-AE29-15BC4E1A994A} = {6386E12F-434D-436A-A0F4-2D93B7A2024A}
-		{C395264B-A7B6-4DF4-A70A-ACD405A544F2} = {3553A265-AB32-463F-8A2D-4431594D7938}
-		{716DDBB8-526A-47F9-80B6-628454D609FD} = {3553A265-AB32-463F-8A2D-4431594D7938}
-		{6C23FFDD-F7D4-4A85-80C7-5CB51AA35D7D} = {3553A265-AB32-463F-8A2D-4431594D7938}
-		{9B1D3E90-E217-4E08-969D-1B61251E8D4E} = {3553A265-AB32-463F-8A2D-4431594D7938}
-		{E39FBA9B-97EB-45A2-9F49-96849C2ABBFF} = {3553A265-AB32-463F-8A2D-4431594D7938}
+		{3352F3EB-795B-47C3-B2F5-19769208E6CE} = {BFEBE64C-A559-47CE-AE29-15BC4E1A994A}
+		{A642989A-9689-40BC-9DEF-68E343B4D4ED} = {6386E12F-434D-436A-A0F4-2D93B7A2024A}
+		{799BD374-F4D6-466F-B223-0BFA97523C81} = {A642989A-9689-40BC-9DEF-68E343B4D4ED}
+		{18D79FE5-89E2-4B4A-8409-88FDE2AC505B} = {A642989A-9689-40BC-9DEF-68E343B4D4ED}
+		{08D23710-D8A0-476F-9160-B73DA6D68AE3} = {A642989A-9689-40BC-9DEF-68E343B4D4ED}
+		{CAD770CD-CCB5-4050-8B1B-A741E779166A} = {A642989A-9689-40BC-9DEF-68E343B4D4ED}
+		{F493F614-7676-48AB-9BFC-DCC1FCFFB702} = {A642989A-9689-40BC-9DEF-68E343B4D4ED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B59A9462-421E-4FC9-A037-0A2A7FD00184}
