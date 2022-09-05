@@ -22,7 +22,12 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Rules
         {
             ProgrammingLanguage? result = await _programmingLanguageRepository.GetAsync(x => x.Name == name);
 
-            if (result == null) throw new BusinessException("ProgrammingLanguage name exists.");
+            if (result != null) throw new BusinessException("ProgrammingLanguage name exists.");
+        }
+
+        public void ProgrammingLanguageShouldExistWhenRequested(ProgrammingLanguage programmingLanguage)
+        {
+            if (programmingLanguage == null) throw new BusinessException("ProgrammingLanguage does not exists.");
         }
     }
 }
