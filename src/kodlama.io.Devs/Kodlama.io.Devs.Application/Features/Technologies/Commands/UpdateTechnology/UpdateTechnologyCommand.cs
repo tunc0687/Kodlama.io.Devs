@@ -12,13 +12,13 @@ using System.Threading.Tasks;
 
 namespace Kodlama.io.Devs.Application.Features.Technologies.Commands.UpdateTechnology
 {
-    public class UpdateTechnologyCommand : IRequest<UpdateTechnologyDto>
+    public class UpdateTechnologyCommand : IRequest<UpdatedTechnologyDto>
     {
         public int Id { get; set; }
         public int ProgrammingLanguageId { get; set; }
         public string Name { get; set; }
 
-        public class UpdateTechnologyCommandHandler : IRequestHandler<UpdateTechnologyCommand, UpdateTechnologyDto>
+        public class UpdateTechnologyCommandHandler : IRequestHandler<UpdateTechnologyCommand, UpdatedTechnologyDto>
         {
             private readonly ITechnologyRepository _technologyRepository;
             private readonly IMapper _mapper;
@@ -31,7 +31,7 @@ namespace Kodlama.io.Devs.Application.Features.Technologies.Commands.UpdateTechn
                 _technologyBusinessRules = technologyBusinessRules;
             }
 
-            public async Task<UpdateTechnologyDto> Handle(UpdateTechnologyCommand request, CancellationToken cancellationToken)
+            public async Task<UpdatedTechnologyDto> Handle(UpdateTechnologyCommand request, CancellationToken cancellationToken)
             {
                 Technology? technology = await _technologyRepository.GetAsync(x => x.Id == request.Id);
                 _technologyBusinessRules.TechnologyShouldExistWhenRequested(technology);
@@ -41,7 +41,7 @@ namespace Kodlama.io.Devs.Application.Features.Technologies.Commands.UpdateTechn
 
                 _mapper.Map(request, technology);
                 Technology updatedTechnology = await _technologyRepository.UpdateAsync(technology);
-                UpdateTechnologyDto updateTechnologyDto = _mapper.Map<UpdateTechnologyDto>(updatedTechnology);
+                UpdatedTechnologyDto updateTechnologyDto = _mapper.Map<UpdatedTechnologyDto>(updatedTechnology);
 
                 return updateTechnologyDto;
             }

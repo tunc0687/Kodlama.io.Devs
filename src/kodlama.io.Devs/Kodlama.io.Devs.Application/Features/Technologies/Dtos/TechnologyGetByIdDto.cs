@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Kodlama.io.Devs.Application.Features.Technologies.Dtos
 {
-    public class DeleteTechnologyDto
+    public class TechnologyGetByIdDto
     {
         public int Id { get; set; }
+        public int ProgrammingLanguageId { get; set; }
         public string Name { get; set; }
     }
 }

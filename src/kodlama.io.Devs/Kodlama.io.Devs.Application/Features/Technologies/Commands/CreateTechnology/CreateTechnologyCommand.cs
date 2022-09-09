@@ -12,12 +12,12 @@ using System.Threading.Tasks;
 
 namespace Kodlama.io.Devs.Application.Features.Technologies.Commands.CreateTechnology
 {
-    public class CreateTechnologyCommand : IRequest<CreateTechnologyDto>
+    public class CreateTechnologyCommand : IRequest<CreatedTechnologyDto>
     {
         public int ProgrammingLanguageId { get; set; }
         public string Name { get; set; }
 
-        public class CreateTechnologyCommandHandler : IRequestHandler<CreateTechnologyCommand, CreateTechnologyDto>
+        public class CreateTechnologyCommandHandler : IRequestHandler<CreateTechnologyCommand, CreatedTechnologyDto>
         {
             private readonly ITechnologyRepository _technologyRepository;
             private readonly IMapper _mapper;
@@ -30,14 +30,14 @@ namespace Kodlama.io.Devs.Application.Features.Technologies.Commands.CreateTechn
                 _technologyBusinessRules = technologyBusinessRules;
             }
 
-            public async Task<CreateTechnologyDto> Handle(CreateTechnologyCommand request, CancellationToken cancellationToken)
+            public async Task<CreatedTechnologyDto> Handle(CreateTechnologyCommand request, CancellationToken cancellationToken)
             {
                 await _technologyBusinessRules.TechnologyNameCanNotBeDuplicatedWhenInserted(request.Name);
                 await _technologyBusinessRules.ProgrammingLanguageIdShouldExistWhenRequested(request.ProgrammingLanguageId);
 
                 Technology mappedTechnology = _mapper.Map<Technology>(request);
                 Technology createTechnology = await _technologyRepository.AddAsync(mappedTechnology);
-                CreateTechnologyDto createTechnologyDto = _mapper.Map<CreateTechnologyDto>(createTechnology);
+                CreatedTechnologyDto createTechnologyDto = _mapper.Map<CreatedTechnologyDto>(createTechnology);
 
                 return createTechnologyDto;
             }

@@ -10,34 +10,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kodlama.io.Devs.Application.Features.Technologies.Commands.DeleteTechnology
+namespace Kodlama.io.Devs.Application.Features.Technologies.Queries.GetByIdTechnology
 {
-    public class DeleteTechnologyCommand : IRequest<DeletedTechnologyDto>
+    public class GetByIdTechnologyQuery : IRequest<TechnologyGetByIdDto>
     {
         public int Id { get; set; }
 
-        public class DeleteTechnologyCommandHandler : IRequestHandler<DeleteTechnologyCommand, DeletedTechnologyDto>
+        public class GetByIdTechnologyQueryHandler : IRequestHandler<GetByIdTechnologyQuery, TechnologyGetByIdDto>
         {
             private readonly ITechnologyRepository _technologyRepository;
             private readonly IMapper _mapper;
             private readonly TechnologyBusinessRules _technologyBusinessRules;
 
-            public DeleteTechnologyCommandHandler(ITechnologyRepository technologyRepository, IMapper mapper, TechnologyBusinessRules technologyBusinessRules)
+            public GetByIdTechnologyQueryHandler(ITechnologyRepository technologyRepository, IMapper mapper, TechnologyBusinessRules technologyBusinessRules)
             {
                 _technologyRepository = technologyRepository;
                 _mapper = mapper;
                 _technologyBusinessRules = technologyBusinessRules;
             }
 
-            public async Task<DeletedTechnologyDto> Handle(DeleteTechnologyCommand request, CancellationToken cancellationToken)
+            public async Task<TechnologyGetByIdDto> Handle(GetByIdTechnologyQuery request, CancellationToken cancellationToken)
             {
                 Technology? technology = await _technologyRepository.GetAsync(x => x.Id == request.Id);
                 _technologyBusinessRules.TechnologyShouldExistWhenRequested(technology);
 
-                Technology? deleteTechnology = await _technologyRepository.DeleteAsync(technology);
-                DeletedTechnologyDto deleteTechnologyDto = _mapper.Map<DeletedTechnologyDto>(deleteTechnology);
+                TechnologyGetByIdDto technologyGetByIdDto = _mapper.Map<TechnologyGetByIdDto>(technology);
 
-                return deleteTechnologyDto;
+                return technologyGetByIdDto;
             }
         }
     }
