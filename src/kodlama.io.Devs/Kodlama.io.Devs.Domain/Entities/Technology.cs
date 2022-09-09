@@ -7,18 +7,21 @@ using System.Threading.Tasks;
 
 namespace Kodlama.io.Devs.Domain.Entities
 {
-    public class ProgrammingLanguage : Entity
+    public class Technology : Entity
     {
+        public int ProgrammingLanguageId { get; set; }
         public string Name { get; set; }
-        public ICollection<Technology> Technologies { get; set; }
 
-        public ProgrammingLanguage()
+        public ProgrammingLanguage? ProgrammingLanguage { get; set; }
+
+        public Technology()
         {
         }
 
-        public ProgrammingLanguage(int id, string name) : this()
+        public Technology(int id, int programmingLanguageId, string name) : this()
         {
             Id = id;
+            ProgrammingLanguageId = programmingLanguageId;
             Name = name;
         }
     }

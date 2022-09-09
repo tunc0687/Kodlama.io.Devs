@@ -20,6 +20,13 @@
 
   <ItemGroup>
     <Folder Include="Features\ProgrammingLanguages\Constants\" />
+    <Folder Include="Features\SomeEntity\Commands\" />
+    <Folder Include="Features\SomeEntity\Constants\" />
+    <Folder Include="Features\SomeEntity\Dtos\" />
+    <Folder Include="Features\SomeEntity\Models\" />
+    <Folder Include="Features\SomeEntity\Profiles\" />
+    <Folder Include="Features\SomeEntity\Queries\" />
+    <Folder Include="Features\SomeEntity\Rules\" />
   </ItemGroup>
 
 </Project>
