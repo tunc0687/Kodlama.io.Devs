@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kodlama.io.Devs.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,12 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Dtos
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public ICollection<GetTechnologies> Technologies { get; set; }
+
+        public class GetTechnologies
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+        }
     }
 }

@@ -1,11 +1,11 @@
 using Core.CrossCuttingConcerns.Exceptions;
 using Kodlama.io.Devs.Application;
 using Kodlama.io.Devs.Persistence;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 builder.Services.AddApplicationServices();
 builder.Services.AddPersistenceServices(builder.Configuration);

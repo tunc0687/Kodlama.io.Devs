@@ -5,6 +5,7 @@ using Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Models;
 using Kodlama.io.Devs.Application.Services.Repositories;
 using Kodlama.io.Devs.Domain.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,10 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Queries.GetL
 
             public async Task<ProgrammingLanguageListModel> Handle(GetListProgrammingLanguageQuery request, CancellationToken cancellationToken)
             {
-                IPaginate<ProgrammingLanguage> programmingLanguages = await _programmingLanguageRepository.GetListAsync(index:request.PageRequest.Page, size:request.PageRequest.PageSize);
+                IPaginate<ProgrammingLanguage> programmingLanguages = await _programmingLanguageRepository.GetListAsync(include:
+                                                                x=>x.Include(c => c.Technologies),
+                                                                index:request.PageRequest.Page,
+                                                                size:request.PageRequest.PageSize);
                 ProgrammingLanguageListModel mappedProgrammingLanguageListModel = _mapper.Map<ProgrammingLanguageListModel>(programmingLanguages);
 
                 return mappedProgrammingLanguageListModel;

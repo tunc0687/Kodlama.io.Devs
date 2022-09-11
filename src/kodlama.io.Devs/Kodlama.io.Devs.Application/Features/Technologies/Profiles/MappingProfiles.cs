@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Dtos.ProgrammingLanguageListDto;
 
 namespace Kodlama.io.Devs.Application.Features.Technologies.Profiles
 {
@@ -31,6 +32,8 @@ namespace Kodlama.io.Devs.Application.Features.Technologies.Profiles
                 .ForMember(dest => dest.ProgrammingLanguageName, opt => opt.MapFrom(src => src.ProgrammingLanguage.Name))
                 .ReverseMap();
             CreateMap<IPaginate<Technology>, TechnologyListModel>().ReverseMap();
+
+            CreateMap<Technology, GetTechnologies>().ReverseMap();
         }
     }
 }
